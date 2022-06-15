@@ -34,5 +34,5 @@ end
 arr1 = [2, 3, 8, 9]
 arr2 = [1, 4, 5, 7]
 
-p arr1 + arr2
-p merge_sort(arr1 + arr2)
+puts "Before sorting: #{arr1 + arr2}"
+puts "After sorting: #{merge_sort(arr1 + arr2)}"
