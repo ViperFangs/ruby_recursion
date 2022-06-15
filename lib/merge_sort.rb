@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# merge_sort takes an array(assumes it unsorted) and returns the sorted array using the merge sort recursion algorithm
 def merge_sort(unsorted_arr)
   array_length = unsorted_arr.length
   return unsorted_arr unless array_length > 1
@@ -13,7 +14,7 @@ def merge_sort(unsorted_arr)
   merge_sort_helper(left_return_value, right_return_value)
 end
 
-# merge_sort_helper takes in 2 arrays and sorts them according to merge sort
+# merge_sort_helper takes in 2 arrays and sorts them according to the merge sort algorithm
 def merge_sort_helper(arr1, arr2)
   sorted_array = []
   arr1_index = 0
