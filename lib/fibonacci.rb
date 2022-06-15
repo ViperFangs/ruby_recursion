@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-def fibs(number)
-  output_array = []
-
+def fibs(number, output_array = [])
   number.times { |i| i < 2 ? output_array.push(i) : output_array.push(output_array[-2] + output_array [-1]) }
 
   output_array
