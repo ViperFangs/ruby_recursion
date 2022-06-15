@@ -15,3 +15,6 @@ def fibs_rec(number, array = [])
   fibs_rec(number - 1, array)
   array.push(array[-2] + array [-1])
 end
+
+p fibs(15)
+p fibs_rec(15)
