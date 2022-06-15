@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def fibs(number)
   output_array = []
 
