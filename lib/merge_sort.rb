@@ -2,15 +2,14 @@
 
 def merge_sort(unsorted_arr)
   array_length = unsorted_arr.length
-  return if array_length < 2
+  return unless array_length > 1
 
-  slice_number = array_length.even? ? array_length / 2 : (array_length + 1) / 2
-
-  merge_sort(unsorted_arr[0...slice_number])
-  merge_sort(unsorted_arr[slice_number..array_length])
-  merge_sort_helper(unsorted_arr[0...slice_number], unsorted_arr[slice_number..array_length])
+  merge_sort(unsorted_arr[0, (array_length / 2)])
+  merge_sort(unsorted_arr[(array_length / 2), array_length])
+  merge_sort_helper(unsorted_arr[0, (array_length / 2)], unsorted_arr[(array_length / 2), array_length])
 end
 
+# merge_sort_helper takes in 2 arrays and sorts them according to merge sort
 def merge_sort_helper(arr1, arr2)
   sorted_array = []
   arr1_index = 0
@@ -26,13 +25,21 @@ def merge_sort_helper(arr1, arr2)
     end
   end
 
-  sorted_array += arr1_index == arr1.length + 1 ? arr2[arr2_index..arr2.length] : arr1[arr1_index..arr1.length]
+  until arr1_index == arr1.length
+    sorted_array.push(arr1[arr1_index])
+    arr1_index += 1
+  end
+
+  until arr2_index == arr2.length
+    sorted_array.push(arr2[arr2_index])
+    arr2_index += 1
+  end
 
   sorted_array
 end
 
-arr1 = [2, 3, 8, 9]
-arr2 = [1, 4, 5, 7]
+arr1 = [6, 2, 8, 3]
+arr2 = [1, 4, 5]
 
 puts "Before sorting: #{arr1 + arr2}"
 puts "After sorting: #{merge_sort(arr1 + arr2)}"
