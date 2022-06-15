@@ -6,8 +6,10 @@ def merge_sort(unsorted_arr)
 
   array_left_half = unsorted_arr[0, (array_length / 2)]
   array_right_half = unsorted_arr[(array_length / 2), array_length]
+
   left_return_value = merge_sort(array_left_half)
   right_return_value = merge_sort(array_right_half)
+
   merge_sort_helper(left_return_value, right_return_value)
 end
 
