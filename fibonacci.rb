@@ -7,9 +7,9 @@ def fibs(number)
 end
 
 def fibs_rec(number, array = [])
-  if number > 1
-    fibs_rec(number - 1) + fibs_rec(number - 2)
-  else
-    number
-  end
+  return array.push(number) if number < 2
+  return array.push(0, 1) if number == 2
+
+  fibs_rec(number - 1, array)
+  array.push(array[-2] + array [-1])
 end
