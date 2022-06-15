@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def merge_sort(unsorted_arr)
   array_length = unsorted_arr.length
   return if array_length < 2
@@ -11,7 +13,7 @@ end
 
 def merge_sort_helper(arr1, arr2)
   sorted_array = []
-  arr1_index = 0 
+  arr1_index = 0
   arr2_index = 0
 
   while arr1_index < arr1.length && arr2_index < arr2.length
@@ -24,17 +26,13 @@ def merge_sort_helper(arr1, arr2)
     end
   end
 
-  if arr1_index == arr1.length + 1
-    sorted_array += arr2[arr2_index..arr2.length]
-  else
-    sorted_array += arr1[arr1_index..arr1.length]
-  end
+  sorted_array += arr1_index == arr1.length + 1 ? arr2[arr2_index..arr2.length] : arr1[arr1_index..arr1.length]
 
   sorted_array
 end
 
-arr1 = [2,3,8,9]
-arr2 = [1,4,5,7]
+arr1 = [2, 3, 8, 9]
+arr2 = [1, 4, 5, 7]
 
 p arr1 + arr2
 p merge_sort(arr1 + arr2)
