@@ -2,13 +2,13 @@
 
 def merge_sort(unsorted_arr)
   array_length = unsorted_arr.length
-  return unless array_length > 1
+  return unsorted_arr unless array_length > 1
 
   array_left_half = unsorted_arr[0, (array_length / 2)]
   array_right_half = unsorted_arr[(array_length / 2), array_length]
-  merge_sort(array_left_half)
-  merge_sort(array_right_half)
-  merge_sort_helper(array_left_half, array_right_half)
+  left_return_value = merge_sort(array_left_half)
+  right_return_value = merge_sort(array_right_half)
+  merge_sort_helper(left_return_value, right_return_value)
 end
 
 # merge_sort_helper takes in 2 arrays and sorts them according to merge sort
@@ -40,10 +40,10 @@ def merge_sort_helper(arr1, arr2)
   sorted_array
 end
 
-arr1 = [6, 2, 8, 3]
-arr2 = [1, 4, 5]
+arr1 = [6, 2, 8]
+arr2 = [1, 4, 5, 7]
 
-#p merge_sort_helper([2, 5, 8], [1, 3, 6, 7])
+# p merge_sort_helper([1, 4, 8, 10], [3, 6])
 
 puts "Before sorting: #{arr1 + arr2}"
 puts "After sorting: #{merge_sort(arr1 + arr2)}"
