@@ -12,7 +12,7 @@ def merge_sort(unsorted_arr)
 end
 
 # merge_sort_helper takes in 2 arrays and sorts them according to merge sort
-def merge_sort_helper(arr, arr1, arr2)
+def merge_sort_helper(arr1, arr2)
   sorted_array = []
   arr1_index = 0
   arr2_index = 0
@@ -37,7 +37,7 @@ def merge_sort_helper(arr, arr1, arr2)
     arr2_index += 1
   end
 
-  arr = sorted_array
+  sorted_array
 end
 
 arr1 = [6, 2, 8, 3]
